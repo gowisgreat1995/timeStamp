@@ -25,8 +25,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', index);
 app.use('/users', users);
 
-app.get('/:date', function(req,res){
-    var dateInp=req.params.date;
+app.get('/:dateString', function(req,res){
+    var dateInp=req.params.dateString;
     
   months=["January","February","March","April","May","June","July","August","September","October","November","December"];
 var month;var date;var year;var unix;var natural;
@@ -55,7 +55,7 @@ var month;var date;var year;var unix;var natural;
     }
     
     
-    dateJSON=[{unix:unix,natural:natural}];
+    var dateJSON={unix:unix,natural:natural};
 
     res.json(JSON.parse(dateJSON));
     res.end();
