@@ -26,8 +26,9 @@ app.use('/', index);
 app.use('/users', users);
 
 app.get('/:date', function(req,res){
-    var date=req.params.date;
-    res.send(date);
+    var date=new Date(req.params.date);
+    
+    res.send(date.getTime());
     res.end();
     
 });
