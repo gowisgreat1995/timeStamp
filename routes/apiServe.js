@@ -4,8 +4,8 @@ var url=require("url").parse(url,true);
 var router = express();
 
 /* GET home page. */
-router.param('date', function(req, res, next,date) {
-   
+router.get('/:date', function(req, res, next) {
+   var date=req.params.date;
     
   res.render('jsonShow',JSON.stringify( { "data": date}));
     
