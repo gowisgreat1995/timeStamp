@@ -25,7 +25,12 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', index);
 app.use('/users', users);
 
-app.use('/:date', apiServe);
+app.get('/:date', function(req,res){
+    var date=req.params.date;
+    res.send(date);
+    res.end();
+    
+});
 
 console.log("server running");
 // catch 404 and forward to error handler
