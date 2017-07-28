@@ -25,10 +25,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 
 
-app.use('/'+url_parts.pathname,function(req, res, next){
-res.send(url_parts);
-res.end();
-}
+
 app.use('/', index);
 app.use('/users', users);
 app.use(url,apiServe);
