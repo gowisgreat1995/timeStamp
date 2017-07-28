@@ -26,7 +26,7 @@ app.use('/', index);
 app.use('/users', users);
 
 app.get('/:date', function(req,res){
-    var dateInp=new req.params.date;
+    var dateInp=req.params.date;
     
   months=["January","February","March","April","May","June","July","August","September","October","November","December"];
 var month;var date;var year;var unix;var natural;
