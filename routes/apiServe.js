@@ -1,6 +1,6 @@
 
 var express = require('express');
-var url=require("url").parse(url,true);
+
 var router = express.Router();
 
 /* GET home page. */
