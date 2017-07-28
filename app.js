@@ -1,6 +1,7 @@
 var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
+var url=require("url");
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
@@ -43,6 +44,10 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-
+app.use(function(err, req, res, next){
+  var url_parts = url.parse(req.url, true);
+res.send(url);
+res.end();
+}
 
 module.exports = app;
