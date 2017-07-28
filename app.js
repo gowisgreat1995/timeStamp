@@ -25,9 +25,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', index);
 app.use('/users', users);
 
-app.get('/:username', function(request, response, next) {
+app.get('/:username', function(request, response) {
   var username = request.params.username;
-response.render('/:username', apiServe);
+response.render('/', apiServe);
 }
 console.log("server running");
 // catch 404 and forward to error handler
