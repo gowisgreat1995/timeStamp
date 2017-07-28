@@ -25,8 +25,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', index);
 app.use('/users', users);
 
-app.use('/:date',apiServe);
-});
+app.use('/:date', apiServe);
+
 console.log("server running");
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
