@@ -28,7 +28,7 @@ app.use('/users', users);
 app.get('/:date', function(request, response) {
   var username = request.params.username;
 response.render('/:date', apiServe);
-}
+});
 console.log("server running");
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
