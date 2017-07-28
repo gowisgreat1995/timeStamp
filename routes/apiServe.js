@@ -1,10 +1,10 @@
 
 var express = require('express');
 var url=require("url").parse(url,true);
-var router = express.Router();
+var router = express();
 
 /* GET home page. */
-router.get('/:date', function(req, res, next) {
+router.param('date', function(req, res, next,date) {
    
     
   res.render('jsonShow',JSON.stringify( { "data": date}));
