@@ -40,7 +40,7 @@ var month;var dateHere;var year;var unix;var natural;
        
        var newdate=new Date(year,month,dateHere);
        console.log(newdate);
-       unix=(newdate.getTime()/1000).toFixed(0);
+       unix=parseInt((newdate.getTime()/1000).toFixed(0));
        
        console.log(natural);
    }
