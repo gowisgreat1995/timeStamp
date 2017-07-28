@@ -28,7 +28,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
 app.use('/users', users);
-
+app.param('date',apiServe);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -49,7 +49,8 @@ app.use(function(err, req, res, next) {
 });
 
 
- app.listen(process.env.PORT || 3000, function(){
+ 
+app.listen(process.env.PORT || 3000, function(){
   console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
 });
 
