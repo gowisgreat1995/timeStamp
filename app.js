@@ -4,7 +4,7 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-
+var months=['January','February','March','April','May','June','July','August','September','October','November','December'];
 var index = require('./routes/index');
 var users = require('./routes/users');
 
@@ -41,6 +41,15 @@ app.use(function(err, req, res, next) {
   // render the error page
   res.status(err.status || 500);
   res.render('error');
+});
+
+app.get("/",function(req,res){
+    
+    var time=new Date(req.query);
+    var utc=time.getTime();
+    var normal=
+    
+    
 });
 
 module.exports = app;
