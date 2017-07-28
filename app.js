@@ -57,7 +57,7 @@ var month;var date;var year;var unix;var natural;
     
     var dateJSON={unix:unix,natural:natural};
 
-    res.json(JSON.parse(dateJSON));
+    res.json(dateJSON);
     res.end();
     
 });
