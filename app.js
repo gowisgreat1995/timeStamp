@@ -29,16 +29,16 @@ app.get('/:dateString', function(req,res){
     var dateInp=req.params.dateString;
     
   months=["January","February","March","April","May","June","July","August","September","October","November","December"];
-var month;var date;var year;var unix;var natural;
+var month;var dateHere;var year;var unix;var natural;
     var reg=/[A-z]/;
     if(reg.test(dateInp))
    {natural=dateInp;
    dateInp=dateInp.split(/ |,/); 
       month=months.indexOf(dateInp[0]);
-       date=dateInp[1];
+       dateHere=dateInp[1];
        year=dateInp[2];
        
-       var newdate=new Date(year,month,date);
+       var newdate=new Date(year,month,dateHere);
        console.log(newdate);
        unix=(newdate.getTime()/1000).toFixed(0);
        
