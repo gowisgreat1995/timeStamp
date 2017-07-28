@@ -26,9 +26,38 @@ app.use('/', index);
 app.use('/users', users);
 
 app.get('/:date', function(req,res){
-    var date=new Date(req.params.date);
+    var dateInp=new req.params.date;
     
-    res.send(date.getTime());
+  months=["January","February","March","April","May","June","July","August","September","October","November","December"];
+var month;var date;var year;var unix;var natural;
+    var reg=/[A-z]/;
+    if(reg.test(dateInp))
+   {natural=dateInp;
+   dateInp=dateInp.split(/ |,/); 
+      month=months.indexOf(dateInp[0]);
+       date=dateInp[1];
+       year=dateInp[2];
+       
+       var newdate=new Date(year,month,date);
+       console.log(newdate);
+       unix=(newdate.getTime()/1000).toFixed(0);
+       
+       console.log(natural);
+   }
+    else
+    {
+       var date=new Date(dateInp*1000);
+        year=date.getFullYear();
+        dateof=date.getDate();
+        month=date.getMonth();
+       natural=months[month]+" "+dateof+","+year;
+        unix=dateInp;
+    }
+    
+    
+    dateJSON=[{unix:unix,natural:natural}];
+
+    res.json(JSON.parse(dateJSON));
     res.end();
     
 });
