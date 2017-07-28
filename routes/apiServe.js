@@ -7,7 +7,7 @@ var router = express();
 router.get('/:date', function(req, res, next) {
    var date=req.params.date;
     
-  res.render('jsonShow',JSON.stringify( { "data": date}));
+  res.render('jsonShow', { "data": date});
     
   
   
