@@ -4,8 +4,8 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-     var url_parts = url.parse(req.url, true);
-  res.render('index', { title: url_parts.pathname });
+   
+  res.render('index', { title: "Express" });
     
   
   
