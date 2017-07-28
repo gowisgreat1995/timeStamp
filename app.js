@@ -43,13 +43,6 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-app.get("/",function(req,res){
-    
-    var time=new Date(req.query);
-    var utc=time.getTime();
-    var normal=
-    
-    
-});
+
 
 module.exports = app;
