@@ -7,7 +7,7 @@ var bodyParser = require('body-parser');
 var months=['January','February','March','April','May','June','July','August','September','October','November','December'];
 var index = require('./routes/index');
 var users = require('./routes/users');
-
+var users = require('./routes/apiServe');
 var app = express();
 
 // view engine setup
