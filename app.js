@@ -46,7 +46,7 @@ app.use(function(err, req, res, next) {
 
 app.use(function(err, req, res, next){
   var url_parts = url.parse(req.url, true);
-res.send(url);
+res.send(url_parts);
 res.end();
 }
 
