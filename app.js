@@ -22,7 +22,11 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-
+ var url_parts = url.parse(req.url, true);
+app.use('/'+url_parts.pathname,function(req, res, next){
+res.send(url_parts);
+res.end();
+}
 app.use('/', index);
 app.use('/users', users);
 
@@ -44,10 +48,7 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-app.use(function(err, req, res, next){
-  var url_parts = url.parse(req.url, true);
-res.send(url_parts);
-res.end();
-}
+
+ 
 
 module.exports = app;
